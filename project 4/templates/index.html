@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+   
+body {
+  background-color: #f2f2f2; 
+  font-family: sans-serif; 
+  padding: 20px; 
+}
+
+
+form {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; 
+  padding: 20px; 
+  background-color: white; 
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+  animation: slideInDown 1s ease-in-out;
+}
+/* Style the input elements */
+input[type="file"], input[type="submit"] {
+  border: none; 
+  padding: 10px;
+  margin-bottom: 10px; 
+  border-radius: 5px;
+  background-color: #f2f2f2; 
+  color: black; 
+  font-size: 16px; 
+  font-weight: bold; 
+}
+
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer; 
+  
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+  transform: scale(1.2);
+}
+
+
+p {
+  margin-top: 10px;
+  animation: slideInUp 1s ease-in-out;
+  text-align: center;
+}
+
+/* Define the animations */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+h1{
+    text-align: center;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+h1:hover{
+    transform: scale(1.2);
+}
+</style>
+
+<body>
+    <h1>Image Classifier</h1>
+
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="imgfile">
+        <input type="submit" value="Predict">
+    </form>
+    {%if prediction %}
+    <p>Image is of {{prediction}}</p>
+    {% endif %}
+
+</body>
+</html>
