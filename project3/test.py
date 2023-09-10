@@ -7,7 +7,7 @@ e=init()
 
 l=Recognizer() 
 
-openai.api_key="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"
+openai.api_key=your_api_key
 
 
 app = Flask(__name__)
